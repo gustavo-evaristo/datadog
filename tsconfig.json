@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "allowJs": true,
+      "outDir": "./build",
+      "rootDir": "./src",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "esModuleInterop": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "baseUrl": ".",
+      "removeComments": true,
+      "paths": {
+        "@services": ["./src/services/index"],
+      },
+    },
+
+    "include": ["./src/**/*.ts"],
+
+    "exclude": ["node_modules", "build"]
+}
