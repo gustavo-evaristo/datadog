@@ -1,8 +1,16 @@
+import path from 'path';
 import tracer from 'dd-trace';
+import { createLogger, transports, format } from 'winston';
 
-tracer.init({
+export const Tracer = tracer.init({
     logInjection: true,
-    
 });
 
-export default tracer;
+export const Logger = createLogger({
+    level: 'info',
+    exitOnError: false,
+    format: format.json(),
+    transports: [
+        new transports.File({ filename: path.join(__dirname, '..', '..', 'logs', 'ddlog.log') })
+    ]
+});
